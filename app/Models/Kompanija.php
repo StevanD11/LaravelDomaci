@@ -12,7 +12,8 @@ class Kompanija extends Model
 
     protected $fillable = [
         'naziv',
-        'adresa',
+        'sediste',
+        'grad'
     ];
 
 

@@ -14,6 +14,7 @@ class Zaposleni extends Model
         'ime',
         'prezime',
         'adresa',
+        'plata',
         'kompanija_id'
     ];
 
