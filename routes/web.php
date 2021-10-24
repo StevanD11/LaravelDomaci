@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KompanijaController;
+use App\Http\Controllers\ZaposleniController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('kompanija', [KompanijaController::class, 'index']);
+Route::get('zaposleni', [ZaposleniController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
