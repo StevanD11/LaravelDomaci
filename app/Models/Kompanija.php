@@ -16,7 +16,6 @@ class Kompanija extends Model
         'grad'
     ];
 
-
     public function zaposleni()
     {
         return $this->hasMany(Zaposleni::class);

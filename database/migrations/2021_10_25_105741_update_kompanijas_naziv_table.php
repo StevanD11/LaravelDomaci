@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameTable extends Migration
+class UpdateKompanijasNazivTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,9 @@ class RenameTable extends Migration
      */
     public function up()
     {
-        Schema::rename('kompanija', 'kompanijas');
+        Schema::table('kompanijas', function (Blueprint $table) {
+            $table->unique('naziv');
+        });
     }
 
     /**
@@ -23,6 +25,8 @@ class RenameTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('kompanijas', function (Blueprint $table) {
+            $table->dropUnique('naziv');
+        });
     }
 }

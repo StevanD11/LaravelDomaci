@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateKompanijaGradTable extends Migration
+class CreateKompanijasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class UpdateKompanijaGradTable extends Migration
      */
     public function up()
     {
-        Schema::table('kompanija', function (Blueprint $table) {
-            $table->after('sediste', function ($table) {
-                $table->string('grad');
-            });
+        Schema::create('kompanijas', function (Blueprint $table) {
+            $table->id();
+            $table->string('naziv');
+            $table->string('adresa');
+            $table->timestamps();
         });
     }
 
@@ -27,8 +28,6 @@ class UpdateKompanijaGradTable extends Migration
      */
     public function down()
     {
-        Schema::table('kompanija', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('kompanijas');
     }
 }

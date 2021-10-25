@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateKompanijaNazivTable extends Migration
+class UpdateZaposlenisPlataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class UpdateKompanijaNazivTable extends Migration
      */
     public function up()
     {
-        Schema::table('kompanija', function (Blueprint $table) {
-            $table->unique('naziv');
+        Schema::table('zaposlenis', function (Blueprint $table) {
+            $table->after('adresa', function ($table) {
+                $table->integer('plata');
+            });
         });
     }
 
@@ -25,8 +27,8 @@ class UpdateKompanijaNazivTable extends Migration
      */
     public function down()
     {
-        Schema::table('kompanija', function (Blueprint $table) {
-            //
+        Schema::table('zaposlenis', function (Blueprint $table) {
+            $table->dropColumn('plata');
         });
     }
 }
