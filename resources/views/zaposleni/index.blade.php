@@ -3,9 +3,9 @@
 @section('content')
 
 
-<h1 class="text-center text-success" style="margin-top: 25px">Zaposleni</h1>
+<h1 class="text-center text-success" style="margin-top: 10px; margin-bottom: 25px"">Zaposleni</h1>
 
-<table class="table table-bordered table-striped border-success mt-3">
+<table class=" table table-bordered table-striped border-success mt-3">
     <thead class="text-center">
         <tr>
             <th scope="col">ID</th>
@@ -33,8 +33,8 @@
         </tr>
         @endforeach
     </tbody>
-</table>
+    </table>
 
 
 
-@endsection
+    @endsection

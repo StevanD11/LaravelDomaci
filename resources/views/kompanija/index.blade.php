@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="text-center text-primary" style="margin-top: 25px">Kompanije</h1>
+<h1 class="text-center text-primary" style="margin-top: 10px; margin-bottom: 25px">Kompanije</h1>
 
 <table class="table table-bordered table-striped border-primary mt-3">
     <thead class="text-center">
